@@ -2,6 +2,7 @@ let express = require("express");
 let app = express();
 let path = require("path");
 var kmeans = require("kmeans-node");
+var PORT = process.env.PORT || 3000;
 
 app.use(express.static(__dirname + "/public"));
 
@@ -33,6 +34,6 @@ app.get("/calculate", (req, res) => {
   res.send(object);
 });
 
-app.listen(3000, port => {
+app.listen(PORT, port => {
   console.log(`Server started at 3000`);
 });
