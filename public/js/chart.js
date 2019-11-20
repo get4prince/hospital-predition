@@ -14,12 +14,13 @@ var sum = 0;
 $(document).ready(function() {
   axios.get("/getData").then(res => {
     axios.get(`/calculate?id=${numberOfCluster}`).then(async res1 => {
-  
+
       var html = "";
       for (var i = 1; i < 40; i++) {
         html += `<option value="${i + 1}">${i + 1}</option>`;
       }
       document.getElementById("choose").innerHTML = html;
+      document.getElementById("choose").value = 10;
 
       var data = [];
 
